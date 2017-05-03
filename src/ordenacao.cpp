@@ -1,10 +1,27 @@
-#include <iostream>
+/**
+ * @file    ordenacao.cpp
+ * @brief   Código fonte com a implementacao de funcoes que
+            realizam a ordenacao de um vetor de inteiros, de 
+            tamanho n, passado por parametro.
+ * @author  Bianca Santiago (bianca.santiago72@gmail.com)
+ * @author  Jaine Budke (jainebudke@hotmail.com)
+ * @since   18/04/2017
+ * @date    22/05/2017
+ */
+
 #include "ordenacao.h" 
 
 
-int insertionSort( int *V, int tam ){
+/**
+ * @brief Realiza a ordenacao em uma base de dados, passada por 
+          parametro por meio de um vetor, de tamanho n.
+ * @details Algoritmo de ordenacao implementado de maneira iterativa e com o metodo insertionSort.
+ * @param V Vetor com a base de busca.
+ * @param n Tamanho do vetor.
+ */
+void insertionSort( int *V, int n ){
  
-    for( int i=1; i<tam; i++ ){
+    for( int i=1; i<n; i++ ){
  
         int elem = V[i];
         int j = i-1;
@@ -20,14 +37,21 @@ int insertionSort( int *V, int tam ){
  
 }
 
-int selectionSort( int *V, int tam ){
+/**
+ * @brief Realiza a ordenacao em uma base de dados, passada por 
+          parametro por meio de um vetor, de tamanho n.
+ * @details Algoritmo de ordenacao implementado de maneira iterativa e com o metodo selectionSort.
+ * @param V Vetor com a base de busca.
+ * @param n Tamanho do vetor.
+ */
+void selectionSort( int *V, int n ){
  
-    for( int i=0 ; i < tam ; i++ ){
+    for( int i=0 ; i < n ; i++ ){
  
         int menor = V[i];
         int indiceMenor = i;
  
-        for( int j=i+1 ; j<tam ; j++ ){
+        for( int j=i+1 ; j<n ; j++ ){
  
             if( V[j] < menor ){
                 menor = V[j];
@@ -42,6 +66,15 @@ int selectionSort( int *V, int tam ){
  
 }
  
+/**
+ * @brief Realiza a ordenacao em uma base de dados, passada por 
+          parametro por meio de um vetor, de tamanho n.
+ * @details Algoritmo de ordenacao implementado de maneira recursiva e com o metodo quickSort.
+ * @param V Vetor com a base de busca.
+ * @param inicio Posicao/indice inicial do vetor.
+ * @param fim Posicao/indice final do vetor.
+ * @return 1 se ordenado, 0 caso contrário.
+ */
 int quickSort( int *V, int inicio, int fim ){
  
     if( fim < inicio ) return 0;
@@ -64,6 +97,15 @@ int quickSort( int *V, int inicio, int fim ){
     quickSort( V, qq+1, fim );
 }
 
+
+/**
+ * @brief Realiza a ordenacao em uma base de dados, passada por 
+          parametro por meio de um vetor, de tamanho n.
+ * @details Algoritmo de ordenacao implementado de maneira recursiva e com o metodo mergesort.
+ * @param V Vetor com a base de busca.
+ * @param inicio Posicao/indice inicial do vetor.
+ * @param fim Posicao/indice final do vetor.
+ */
 void mergesort(int *V, int inicio, int fim) {
 
     int mid;
@@ -80,6 +122,14 @@ void mergesort(int *V, int inicio, int fim) {
 
 }
 
+/**
+ * @brief Auxilia na ordenacao do mergeSort. Junta os fragmentos de ordenacao.
+ * @details Algoritmo implementado de maneira iterativa.
+ * @param V Vetor com a base de busca.
+ * @param inicio Posicao/indice inicial do vetor.
+ * @param fim Posicao/indice final do vetor.
+ * @param mid Posicao/indice da metade do vetor.
+ */
 void merge( int *V, int inicio, int fim, int mid ) {
 
     int i, j, k, C[50];

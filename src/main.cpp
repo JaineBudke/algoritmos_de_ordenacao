@@ -1,9 +1,20 @@
-#include <iostream>
+/**
+ * @file    main.cpp
+ * @brief   Código fonte do prgrama com medição de tempo de execução dos algoritmos de busca
+ * @author  Bianca Santiago (bianca.santiago72@gmail.com)
+ * @author  Jaine Budke (jainebudke@hotmail.com)
+ * @since   18/04/2017
+ * @date    22/05/2017
+ */
+
 #include "ordenacao.h"
 
+/**
+*@brief Função principal que contém o tempo de execução dos algoritmos de busca.
+*/
 int main(){
 
-	    int tam = 7;
+    int tam = 7;
 
     ////////////// INSERTIONSORT ///////////////////
     int A[] = { 10, 99, 82, 83, 84, 19, 29 };
