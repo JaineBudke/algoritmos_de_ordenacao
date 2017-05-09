@@ -10,7 +10,7 @@ Análise empírica dos algoritmos de ordenacao: selectionSort, insertionSort, qu
 
 Para compilar o projeto, basta digitar, pelo terminal, o comando abaixo
 
-    g++ -std=c++11 src/main.cpp src/ordenacao.cpp -I include -o orden
+    g++ -std=c++11 src/main.cpp src/ordenacao.cpp src/manager.cpp -I include -o orden
     
 
 Comando para executar o programa
@@ -21,8 +21,9 @@ Comando para executar o programa
 ## TODO
 
 - [X] Implementar algoritmos de ordenacao.
+- [X] Fornecer instancia do problema de ordenacao: vetor de tamanho N.
 - [ ] Adicionar medição de tempo.
-- [ ] Fornecer instancia do problema de ordenacao: vetor de tamanho N.
+- [ ] Salvar dados em arquivo .txt
 - [ ] Gerar gráfico.
 
 

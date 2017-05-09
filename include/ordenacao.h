@@ -1,8 +1,8 @@
 /**
  * @file    ordenacao.h
  * @brief   Arquivo cabeçalho com a implementacao de funcoes que
-            realizam a ordenacao de uma base de dados, passada por
-            parametro por meio de um vetor, de tamanho n.
+                 realizam a ordenacao de uma base de dados, passada por
+                 parametro por meio de um vetor, de tamanho n.
  * @author  Bianca Santiago (bianca.santiago72@gmail.com)
  * @author  Jaine Budke (jainebudke@hotmail.com)
  * @since   18/04/2017
@@ -17,7 +17,7 @@
 
 
 /**
- * @brief Realiza a ordenacao em uma base de dados, passada por 
+ * @brief Realiza a ordenacao em uma base de dados, passada por
           parametro por meio de um vetor, de tamanho n.
  * @details Algoritmo de ordenacao implementado de maneira iterativa e com o metodo insertionSort.
  * @param V Vetor com a base de busca.
@@ -27,7 +27,7 @@ void insertionSort( int *V, int n );
 
 
 /**
- * @brief Realiza a ordenacao em uma base de dados, passada por 
+ * @brief Realiza a ordenacao em uma base de dados, passada por
           parametro por meio de um vetor, de tamanho n.
  * @details Algoritmo de ordenacao implementado de maneira iterativa e com o metodo selectionSort.
  * @param V Vetor com a base de busca.
@@ -37,7 +37,7 @@ void selectionSort( int *V, int n );
 
 
 /**
- * @brief Realiza a ordenacao em uma base de dados, passada por 
+ * @brief Realiza a ordenacao em uma base de dados, passada por
           parametro por meio de um vetor, de tamanho n.
  * @details Algoritmo de ordenacao implementado de maneira recursiva e com o metodo quickSort.
  * @param V Vetor com a base de busca.
@@ -49,7 +49,7 @@ int quickSort( int *V, int inicio, int fim );
 
 
 /**
- * @brief Realiza a ordenacao em uma base de dados, passada por 
+ * @brief Realiza a ordenacao em uma base de dados, passada por
           parametro por meio de um vetor, de tamanho n.
  * @details Algoritmo de ordenacao implementado de maneira recursiva e com o metodo mergesort.
  * @param V Vetor com a base de busca.
