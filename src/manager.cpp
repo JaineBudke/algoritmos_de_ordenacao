@@ -32,10 +32,11 @@ void generateRandomBase( int *base, int tamBase ){
 
 
 /**
- * @brief Analisa a base de dados gerada apontando o melhor, pior e médio caso dos algoritmos de ordenação.
+ * @brief Analisa a base de dados gerada apontando o melhor, pior e médio caso dos algoritmos de ordenação insertionSort e selectionSort.
  * @param tamBase Tamanho da base de busca.
+ * @param functocall Função de ordenacao (insertionSort ou selectionSort).
  */
-void analiseCasosIS( int tamBase ){
+void analiseCasos( int tamBase, std::function< void( int *, int ) >functocall ){
 
     int base[ tamBase ];   // Vetor com base de busca
 
@@ -43,7 +44,7 @@ void analiseCasosIS( int tamBase ){
     // gera base de dados e tempo para inicializar melhor e pior tempo
     // ==================================
     generateRandomBase( base, tamBase );
-    double tempo = tempoExecucaoIS( base, tamBase );
+    double tempo = tempoExecucao( base, tamBase, functocall );
 
     // declara e inicializa variaveis de medicao de tempo
     int melhorTempo = tempo;
@@ -59,8 +60,7 @@ void analiseCasosIS( int tamBase ){
         generateRandomBase( base, tamBase );
 
         // recebendo tempo que levou para ordenar base
-        double tempo = tempoExecucaoIS( base, tamBase );
-        //std::cout << "Tempo: " << tempo << "milliseconds\n";
+        double tempo = tempoExecucao( base, tamBase, functocall );
 
         // atualizando pior e melhor caso
         if ( tempo < melhorTempo ) { // verifica se o novo tempo é menor que o melhor computado
@@ -83,34 +83,34 @@ void analiseCasosIS( int tamBase ){
 
 
 /**
- * @brief Realiza a medição do tempo da execução da ordenacao de uma base de dados com o insertionSort.
+ * @brief Realiza a medição do tempo da execução da ordenacao de uma base de dados com o insertionSort e selectionSort.
  * @details Função implementada fazendo uso das bibliotecas iomanip e time.h.
  * @param V Vetor com a base de dados.
  * @param n Tamanho da base de dados.
+ * @param funcOrden Função de ordenacao (insertionSort ou selectionSort).
  * @return O tempo de execução da ordenacao.
  */
-int tempoExecucaoIS( int *V, int n ){
+int tempoExecucao( int *V, int n, std::function< void( int * , int ) >funcOrden  ){
 
 
     std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
-    insertionSort( V, n ); // ordena vetor com insertionSort
-    //quickSort( V, 0, n-1 );
-    //selectionSort( V, n );
+    funcOrden( V, n ); // ordena vetor com insertionSort ou selectionSort
     end = std::chrono::system_clock::now();
 
     int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds> (end-start).count();
 
     return elapsed_seconds;
 
-
 }
 
+
 /**
- * @brief Analisa a base de dados gerada apontando o melhor, pior e médio caso dos algoritmos de ordenação.
+ * @brief Analisa a base de dados gerada apontando o melhor, pior e médio caso dos algoritmos de ordenação quickSort e mergeSort.
  * @param tamBase Tamanho da base de busca.
+ * @param functocall2 Função de ordenacao (quickSort e mergeSort).
  */
-void analiseCasosSS( int tamBase ){
+void analiseCasos2( int tamBase, std::function< int( int *, int , int ) >functocall2 ){
 
     int base[ tamBase ];   // Vetor com base de busca
 
@@ -118,7 +118,7 @@ void analiseCasosSS( int tamBase ){
     // gera base de dados e tempo para inicializar melhor e pior tempo
     // ==================================
     generateRandomBase( base, tamBase );
-    double tempo = tempoExecucaoSS( base, tamBase );
+    double tempo = tempoExecucao2( base, tamBase, functocall2 );
 
     // declara e inicializa variaveis de medicao de tempo
     int melhorTempo = tempo;
@@ -134,8 +134,7 @@ void analiseCasosSS( int tamBase ){
         generateRandomBase( base, tamBase );
 
         // recebendo tempo que levou para ordenar base
-        double tempo = tempoExecucaoSS( base, tamBase );
-        //std::cout << "Tempo: " << tempo << "milliseconds\n";
+        double tempo = tempoExecucao2( base, tamBase, functocall2 );
 
         // atualizando pior e melhor caso
         if ( tempo < melhorTempo ) { // verifica se o novo tempo é menor que o melhor computado
@@ -158,25 +157,23 @@ void analiseCasosSS( int tamBase ){
 
 
 /**
- * @brief Realiza a medição do tempo da execução da ordenacao de uma base de dados com o insertionSort.
+ * @brief Realiza a medição do tempo da execução da ordenacao de uma base de dados com o quickSort e mergeSort.
  * @details Função implementada fazendo uso das bibliotecas iomanip e time.h.
  * @param V Vetor com a base de dados.
  * @param n Tamanho da base de dados.
+ * @param funcOrden Função de ordenacao (quickSort e mergeSort).
  * @return O tempo de execução da ordenacao.
  */
-int tempoExecucaoSS( int *V, int n ){
+int tempoExecucao2( int *V, int n, std::function< int( int * , int , int ) >funcOrden  ){
 
 
     std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
-    //insertionSort( V, n ); // ordena vetor com insertionSort
-    //quickSort( V, 0, n-1 );
-    selectionSort( V, n );
+    funcOrden( V, 0, n-1 ); // ordena vetor com insertionSort
     end = std::chrono::system_clock::now();
 
     int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds> (end-start).count();
 
     return elapsed_seconds;
-
 
 }

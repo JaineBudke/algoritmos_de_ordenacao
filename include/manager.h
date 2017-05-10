@@ -11,6 +11,7 @@
 #ifndef _MANAGER_H_
 #define _MANAGER_H_
 
+#include <functional> // New (C ++11) template class.
 
 #include <iostream>
 #include <cstdlib>
@@ -23,10 +24,11 @@
  */
 void generateRandomBase( int *base, int tamBase );
 
-int tempoExecucaoIS( int *V, int n );
-void analiseCasosIS( int tamBase );
+int tempoExecucao( int *V, int n, std::function< void( int *, int ) >funcOrden );
+void analiseCasos( int tamBase, std::function< void( int *, int ) >functocall );
 
-int tempoExecucaoSS( int *V, int n );
-void analiseCasosSS( int tamBase );
+
+int tempoExecucao2( int *V, int n, std::function< int( int * , int , int ) >funcOrden  );
+void analiseCasos2( int tamBase, std::function< int( int *, int , int ) >functocall );
 
 #endif
