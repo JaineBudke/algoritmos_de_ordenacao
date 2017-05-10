@@ -53,6 +53,13 @@ int main(){
         std::function < int( int*, int, int ) >quick = quickSort;
         analiseCasos2( tamBase[i], quick );
         std::cout << "\n";
+
+        // RESULTADO COM ORDENACAO mergeSort
+        std::cout << "MergeSort: \n";
+        std::function < int( int*, int, int ) >merge = mergesort;
+        analiseCasos2( tamBase[i], merge );
+        std::cout << "\n";
+
     }
 
     return 0;

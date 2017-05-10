@@ -109,19 +109,17 @@ int quickSort( int *V, int inicio, int fim ){
  * @param inicio Posicao/indice inicial do vetor.
  * @param fim Posicao/indice final do vetor.
  */
-void mergesort(int *V, int inicio, int fim) {
+int mergesort( int*V, int inicio, int fim ) {
 
-    int mid;
-    if (inicio < fim) {
-
-        mid=(inicio+fim)/2;
-        mergesort(V,inicio,mid);
-        mergesort(V,mid+1,fim);
-        merge(V,inicio,fim,mid);
-
+    if( fim>inicio ) {
+        int q;
+        q=(inicio+fim)/2;
+        mergesort( V, inicio, q );
+        mergesort( V, q+1, fim );
+        merge( V, inicio, q, fim );
     }
 
-    return;
+    return 1;
 
 }
 
@@ -133,44 +131,43 @@ void mergesort(int *V, int inicio, int fim) {
  * @param fim Posicao/indice final do vetor.
  * @param mid Posicao/indice da metade do vetor.
  */
-void merge( int *V, int inicio, int fim, int mid ) {
+void merge( int* V, int inicio, int fim, int mid ) {
 
-    int i, j, k, C[50];
-    i = inicio;
-    k = inicio;
-    j = mid + 1;
+    int n1=fim-inicio+1;
+    int n2=mid-fim;
 
-    while (i <= mid && j <= fim) {
+    int L[n1+1];
+    int R[n2+1];
 
-        if (V[i] < V[j]) {
-            C[k] = V[i];
-            k++;
+    for(int i=0; i<n1; i++)
+        L[i]=V[inicio+i];
+    for(int j=0; j<n2; j++)
+        R[j]=V[fim+1+j];
+
+    int i=0;
+    int j=0;
+    int n=0;
+
+    while( i != n1 && j != n2 ) {
+
+        if( L[i] > R[j] ) {
+            V[inicio+n] = R[j];
+            j++;
+        } else {
+            V[inicio+n] = L[i];
             i++;
         }
-
-        else {
-            C[k] = V[j];
-            k++;
-            j++;
-        }
-
+        n++;
     }
-
-    while (i <= mid) {
-        C[k] = V[i];
-        k++;
-        i++;
-    }
-
-    while (j <= fim){
-        C[k] = V[j];
-        k++;
+    while( j != n2 ) {
+        V[inicio+n] = R[j];
         j++;
+        n++;
     }
-
-    for (i = inicio; i < k; i++){
-        V[i] = C[i];
+    while( i != n1 ) {
+        V[inicio+n]=L[i];
+        i++;
+        n++;
     }
 
 }
-

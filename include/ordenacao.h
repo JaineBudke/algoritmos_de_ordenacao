@@ -56,7 +56,7 @@ int quickSort( int *V, int inicio, int fim );
  * @param inicio Posicao/indice inicial do vetor.
  * @param fim Posicao/indice final do vetor.
  */
-void mergesort( int *V, int inicio, int fim );
+int mergesort( int *V, int inicio, int fim );
 
 
 /**

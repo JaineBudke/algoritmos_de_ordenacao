@@ -92,7 +92,6 @@ void analiseCasos( int tamBase, std::function< void( int *, int ) >functocall ){
  */
 int tempoExecucao( int *V, int n, std::function< void( int * , int ) >funcOrden  ){
 
-
     std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
     funcOrden( V, n ); // ordena vetor com insertionSort ou selectionSort
