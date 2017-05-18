@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
+using std::ofstream;
 
 /**
  * @brief Gera a base de busca aleatória.
@@ -25,10 +27,10 @@
 void generateRandomBase( int *base, int tamBase );
 
 int tempoExecucao( int *V, int n, std::function< void( int *, int ) >funcOrden );
-void analiseCasos( int tamBase, std::function< void( int *, int ) >functocall );
+void analiseCasos( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior, std::ofstream & arqSaidaMedio, int tamBase, std::function< void( int *, int ) >functocall );
 
 
 int tempoExecucao2( int *V, int n, std::function< int( int * , int , int ) >funcOrden  );
-void analiseCasos2( int tamBase, std::function< int( int *, int , int ) >functocall );
+void analiseCasos2( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior, std::ofstream & arqSaidaMedio, int tamBase, std::function< int( int *, int , int ) >functocall );
 
 #endif

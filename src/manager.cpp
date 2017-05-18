@@ -13,6 +13,8 @@
 
 #include <chrono>
 #include <ctime>
+#include <vector>
+#include <iomanip>
 
 
 /**
@@ -36,7 +38,7 @@ void generateRandomBase( int *base, int tamBase ){
  * @param tamBase Tamanho da base de busca.
  * @param functocall Função de ordenacao (insertionSort ou selectionSort).
  */
-void analiseCasos( int tamBase, std::function< void( int *, int ) >functocall ){
+void analiseCasos( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior, std::ofstream & arqSaidaMedio, int tamBase, std::function< void( int *, int ) >functocall ){
 
     int base[ tamBase ];   // Vetor com base de busca
 
@@ -79,6 +81,11 @@ void analiseCasos( int tamBase, std::function< void( int *, int ) >functocall ){
 
     std::cout << "Pior caso: " << piorTempo << "\nMelhor caso: " << melhorTempo << "\nMédio caso: " << medioTempo << "\n";
 
+    arqSaidaMelhor << tamBase << std::setw(10) << melhorTempo << std::endl;
+    arqSaidaPior   << tamBase << std::setw(10) << piorTempo   << std::endl;
+    arqSaidaMedio  << tamBase << std::setw(10) << medioTempo  << std::endl;
+
+
 }
 
 
@@ -109,7 +116,7 @@ int tempoExecucao( int *V, int n, std::function< void( int * , int ) >funcOrden 
  * @param tamBase Tamanho da base de busca.
  * @param functocall2 Função de ordenacao (quickSort e mergeSort).
  */
-void analiseCasos2( int tamBase, std::function< int( int *, int , int ) >functocall2 ){
+void analiseCasos2( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior, std::ofstream & arqSaidaMedio, int tamBase, std::function< int( int *, int , int ) >functocall2 ){
 
     int base[ tamBase ];   // Vetor com base de busca
 
@@ -151,6 +158,10 @@ void analiseCasos2( int tamBase, std::function< int( int *, int , int ) >functoc
     medioTempo = ( somaTempos - piorTempo - melhorTempo )/98;
 
     std::cout << "Pior caso: " << piorTempo << "\nMelhor caso: " << melhorTempo << "\nMédio caso: " << medioTempo << "\n";
+
+    arqSaidaMelhor << tamBase << std::setw(10) << melhorTempo << std::endl;
+    arqSaidaPior   << tamBase << std::setw(10) << piorTempo   << std::endl;
+    arqSaidaMedio  << tamBase << std::setw(10) << medioTempo  << std::endl;
 
 }
 
