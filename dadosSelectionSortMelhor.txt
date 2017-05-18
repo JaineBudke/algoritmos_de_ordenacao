@@ -1,7 +1,0 @@
-#Dados para o script geraGrafico.gnu do SelectionSortMelhor
-#X        #Y
-#Dados para o script geraGrafico.gnu  do MergeSortMelhor
-1000         1
-5000        31
-10000       121
-15000       283
