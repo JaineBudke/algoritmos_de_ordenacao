@@ -289,7 +289,7 @@ int main(){
         std::cout << "\n";
 
     }
-    
+
     // FECHANDO ARQUIVO COM DADOS IS
     std::cout << "Fechando o arquivo dadosInsertionSort.txt..." << std::endl;
     arqsaidaInsertionSortMelhor.close();
