@@ -22,9 +22,9 @@ Comando para executar o programa
 
 - [X] Implementar algoritmos de ordenacao.
 - [X] Fornecer instancia do problema de ordenacao: vetor de tamanho N.
-- [ ] Adicionar medição de tempo.
-- [ ] Salvar dados em arquivo .txt
-- [ ] Gerar gráfico.
+- [X] Adicionar medição de tempo.
+- [X] Salvar dados em arquivo .txt
+- [X] Gerar gráfico.
 
 
 Programa desenvolvido por _Bianca Santiago_ (< *bianca.santiago72@gmail.com* >) e _Jaine Budke_ (< *jainebudke@hotmail.com* >), 2017.1

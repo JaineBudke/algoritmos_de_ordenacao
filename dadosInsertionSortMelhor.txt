@@ -1,0 +1,6 @@
+#Dados para o script geraGrafico.gnu do InsertionSortMelhor
+#X        #Y
+1000         0
+5000        16
+10000        68
+15000       153

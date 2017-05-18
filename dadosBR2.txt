@@ -1,0 +1,6 @@
+#Dados para o script geraGrafico.gnu do SelectionSortPior
+#X        #Y
+1000         1
+5000        33
+10000       133
+15000       296

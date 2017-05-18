@@ -1,0 +1,6 @@
+#Dados para o script geraGrafico.gnu do InsertionSortPior
+#X        #Y
+1000         0
+5000        20
+10000        74
+15000       171
