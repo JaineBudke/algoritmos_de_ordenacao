@@ -28,13 +28,13 @@ Comando para executar o programa
 
 ## Gerar gráficos
 
-Os scripts de geração dos gráficos de análise empírica dos algoritmos de busca estão disponíveis neste projeto. Para gerar os gráficos com o gnuplot, basta executar:
+Os scripts de geração dos gráficos de análise empírica dos algoritmos de busca estão disponíveis neste projeto.
+Para gerar os gráficos com o gnuplot, basta executar:
 
-
-gnuplot> load 'grafBI.gnu'
-gnuplot> load 'grafBR.gnu'
-gnuplot> load 'grafSI.gnu'
-gnuplot> load 'grafSR.gnu'
+	gnuplot> load 'grafBI.gnu'
+	gnuplot> load 'grafBR.gnu'
+	gnuplot> load 'grafSI.gnu'
+	gnuplot> load 'grafSR.gnu'
 
 
 
