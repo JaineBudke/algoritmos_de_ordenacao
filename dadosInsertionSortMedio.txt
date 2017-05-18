@@ -1,6 +1,0 @@
-#Dados para o script geraGrafico.gnu do InsertionSortMedio
-#X        #Y
-1000         0
-5000        17
-10000        68
-15000       155
