@@ -104,7 +104,7 @@ int main(){
 
     // Gravando dadosSelectionSortPior.txt
     std::ofstream arqsaidaSelectionSortPior;
-    arqsaidaSelectionSortPior.open( "dadosBR2.txt", std::ios::out );
+    arqsaidaSelectionSortPior.open( "dadosSelectionSortPior.txt", std::ios::out );
     if( !arqsaidaSelectionSortPior.is_open() ){
         return 0;
     }
